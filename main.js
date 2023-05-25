@@ -26,5 +26,15 @@ createCanvas(16);
 
 // FUNCTION TO CHANGE BACKGROUND COLOR OF A DIV
 function changeColor(element) {
-  element.target.style.background = 'black';
+  element.target.style.background = randomColor();
+}
+
+// FUNCTION TO DETERMINE A RANDOM COLOR VALUE
+function randomColor() {
+  const red = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+
+  const colorValue = `rgb(${red}, ${blue}, ${green})`;
+  return colorValue;
 }
