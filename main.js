@@ -11,8 +11,10 @@ function createCanvas(squares) {
     }
     canvas.appendChild(row);
   }
-  
+
   console.log(canvas.childNodes);
 
   return;
 }
+
+createCanvas(16);
