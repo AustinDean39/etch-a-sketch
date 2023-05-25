@@ -16,7 +16,13 @@ function createCanvas(squares) {
 
   const columns = Array.from(document.getElementsByClassName('column'));
   columns.forEach(square => {
-  square.addEventListener('click', changeColor);
+  square.addEventListener('mousedown', changeColor);
+  square.addEventListener('mouseover', (event) => {
+    if (event.buttons == 1) {
+      changeColor(event);
+    };
+  });
+
 });
 
   return;
@@ -25,8 +31,8 @@ function createCanvas(squares) {
 createCanvas(16);
 
 // FUNCTION TO CHANGE BACKGROUND COLOR OF A DIV
-function changeColor(element) {
-  element.target.style.background = randomColor();
+function changeColor(event) {
+  event.target.style.background = randomColor();
 }
 
 // FUNCTION TO DETERMINE A RANDOM COLOR VALUE
