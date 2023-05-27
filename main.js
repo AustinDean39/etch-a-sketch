@@ -14,6 +14,9 @@ resetCanvasBtn.addEventListener('click', function () {
 // DISPLAY CHOSEN SIZE BENEATH THE SLIDER, UPDATE AS NEEDED
 sizeSetting.addEventListener('input', updateSizeText);
 
+// CONNECT THE COLOR INPUT TO THE CANVAS
+const colorPicker = document.getElementById('color-picker');
+
 // FUNCTION TO UPDATE TEXT UNDERNEATH SIZE SETTING SLIDER
 function updateSizeText() {
   const sliderText = document.getElementById('size-settings-text');
@@ -54,7 +57,7 @@ function createCanvas(squares) {
 
 // FUNCTION TO CHANGE BACKGROUND COLOR OF AN ELEMENT TO A RANDOM COLOR
 function changeColor(event) {
-  event.target.style.background = randomColor();
+  event.target.style.background = colorPicker.value;
 }
 
 // FUNCTION TO DETERMINE A RANDOM RGB() COLOR VALUE

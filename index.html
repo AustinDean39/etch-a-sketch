@@ -20,10 +20,15 @@
     <h1>Etch-A-Sketch</h1>
 
     <div class="settings size-settings">
-      <label for="number-of-squares">Size of Canvas:</label>
+      <label for="canvas-size-input">Size of Canvas:</label>
       <input type="range" min="1" max="100" name="number-of-squares" id="canvas-size-input" value="16">
       <p id="size-settings-text"></p>
       <button id="reset-button" class="btn reset-btn">RESET</button>
+    </div>
+
+    <div class="settings color-settings">
+      <label for="color-picker">Choose fill color:</label>
+      <input type="color" name="color-picker" id="color-picker">
     </div>
     <div class="settings color-settings">
 
