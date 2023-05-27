@@ -16,6 +16,12 @@ sizeSetting.addEventListener('input', updateSizeText);
 
 // CONNECT THE COLOR INPUT TO THE CANVAS
 const colorPicker = document.getElementById('color-picker');
+const randomColorBtn = document.getElementById('random-color-btn');
+
+// EVENT LISTENER FOR RANDOM COLOR BUTTON
+randomColorBtn.addEventListener('click', () => {
+  colorPicker.value = randomHexColor();
+})
 
 // FUNCTION TO UPDATE TEXT UNDERNEATH SIZE SETTING SLIDER
 function updateSizeText() {
@@ -61,11 +67,7 @@ function changeColor(event) {
 }
 
 // FUNCTION TO DETERMINE A RANDOM RGB() COLOR VALUE
-function randomColor() {
-  const red = Math.floor(Math.random() * 256);
-  const blue = Math.floor(Math.random() * 256);
-  const green = Math.floor(Math.random() * 256);
-
-  const colorValue = `rgb(${red}, ${blue}, ${green})`;
-  return colorValue;
+function randomHexColor() {
+  const hex = (Math.random() * 0xfffff * 1000000).toString(16);
+  return '#' + hex.slice(0, 6);
 }
